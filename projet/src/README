@@ -1,0 +1,13 @@
+Questions:
+
+1 Donnez en Java tous les attributs (avec leur visibilité et leur type) de la classe Equipage.
+
+private Boolean auMin;
+private Boolean auMax;
+private Vol vol;
+private Vector<Personne> membres;
+
+A voir si je garde cette forme là pour les membres d'équipage ou si je considère qu'il n'y a qu'un seul pilote et un
+seul copilote et donc ne garde qu'un vecteur de PNC et fait 2 attributs en plus.
+
+
