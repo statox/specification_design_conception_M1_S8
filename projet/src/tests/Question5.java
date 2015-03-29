@@ -109,7 +109,7 @@ public class Question5 {
     /* verifie quun equipage au complet et au maximum passe bien les methodes peutVoler() et equipageAuComplet() a vrai */
     @Test
     public void MaxNumber() throws Exception {
-        System.out.println("vol - Test 4: methodes peutVoler et equipageAuComplet");
+        System.out.println("vol - methodes peutVoler et equipageAuComplet");
         v.addPilote(p);
         v.addCopilote(cp);
         v.addPNC(pncs[0]);
@@ -122,7 +122,7 @@ public class Question5 {
     /* verifie le bon fonctionnement de la methode contains() */
     @Test
 	public void contains() throws Exception {
-    	System.out.println("vol - Test 5: methode contains");
+    	System.out.println("vol - methode contains");
         v.addPilote(p);
         v.addCopilote(cp);
         v.addPNC(pncs[0]);

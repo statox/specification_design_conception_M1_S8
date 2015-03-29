@@ -41,15 +41,24 @@ public class TypeAvion {
 		this.qualifies = new Vector<Personne>();
 	}
 	
-	public void addQualifie(Personne m) throws EquipageException, UnsupportedOperationException {
-		throw new UnsupportedOperationException("Not implemented");
+	public void addQualifie(Personne m) throws EquipageException {
+		if (qualifies.contains(m))
+			throw new EquipageException("TypeAvion: impossible dajouter " + m + ". Membre deja qualifie");
+		
+		qualifies.add(m);
 	}
 	
-	public void delQualifie(Personne m) throws EquipageException, UnsupportedOperationException {
-		throw new UnsupportedOperationException("Not implemented");
+	public void delQualifie(Personne m) throws EquipageException {
+		if (!qualifies.contains(m))
+			throw new EquipageException("TypeAvion: impossible de supprimer " + m + ". Membre non qualifie");
+		
+		qualifies.remove(m);
 	}
 	
-	public void purgeQualifie(Personne m) throws EquipageException, UnsupportedOperationException {
-		throw new UnsupportedOperationException("Not implemented");
+	public void purgeQualifie(Personne m) throws EquipageException {
+		if (qualifies.size() == 0)
+			throw new EquipageException("TypeAvion: impossible de purger les qualifies. la liste est deja vide");
+		
+		qualifies.clear();
 	}
 }

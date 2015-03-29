@@ -57,11 +57,14 @@ public class Personne {
 		return qualifications.contains(t);
 	}
 	
-	public Boolean addQualification(TypeAvion type) {
-		//TODO: to implement exceptions calls
+	public Boolean addQualification(TypeAvion type) throws EquipageException, InvariantBroken {
+		
+		if (qualifications.size()==2)
+			throw new InvariantBroken("Personne: impossible dajouter une qualification. " + this + " a deja 2 qualifications");
 		
 		if (!qualifications.contains(type) && qualifications.size()<2)
 		{
+			type.addQualifie(this);
 			return qualifications.add(type);
 		}
 		
@@ -69,11 +72,13 @@ public class Personne {
 	}
 	
 	
-	public boolean delQualification(TypeAvion type, boolean fromType) throws UnsupportedOperationException {
-		//TODO: To implement
+	public boolean delQualification(TypeAvion type, boolean fromType) throws EquipageException {
 		//TODO: what is the fromType??
 		
-		throw new UnsupportedOperationException("Not implemented");
+		if (!qualifications.contains(type))
+			throw new EquipageException("Personne: impossible de supprimer la qualification car " + this + " nest pas qualifie");
+		
+		return qualifications.remove(type);
 	}
 	@Override
 	public String toString() {
