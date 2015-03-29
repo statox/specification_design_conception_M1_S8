@@ -31,10 +31,26 @@ public class Personne {
 	}
 	
 	/* constructor(s) */
-	public Personne(String nom, String prenom) {
-		super();
+	public Personne(String nom, String prenom) throws InvariantBroken {
+		super();		
 		this.nom = nom;
 		this.prenom = prenom;
+		this.qualifications = new Vector<TypeAvion>();
+		
+		if (!invariant())
+		{
+			throw new InvariantBroken("Personne -" + this);
+		}
+	}
+	
+	/* invariant: 
+	 * In this class the name and firstname can not by empty or null
+	 * return 	true if the invariant is broken
+	 * 			false otherwise
+	 */
+	public boolean invariant()
+	{
+		return !(this.nom.equals(null) || this.nom.isEmpty() || this.prenom.equals(null) || this.prenom.isEmpty());
 	}
 	
 	public Boolean peutVoler(TypeAvion t) {
@@ -53,12 +69,15 @@ public class Personne {
 	}
 	
 	
-	public boolean delQualification(TypeAvion type, boolean fromType) {
+	public boolean delQualification(TypeAvion type, boolean fromType) throws UnsupportedOperationException {
 		//TODO: To implement
 		//TODO: what is the fromType??
 		
-		System.out.println("To implement");
-		return false;
+		throw new UnsupportedOperationException("Not implemented");
+	}
+	@Override
+	public String toString() {
+		return nom + " " + prenom;
 	}
 	
 	

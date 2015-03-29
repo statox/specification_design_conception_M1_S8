@@ -1,5 +1,6 @@
 package aeroport;
 
+
 public class Avion {
 	private TypeAvion type;
 	private String reference;
@@ -27,7 +28,5 @@ public class Avion {
 		this.type = type;
 		this.reference = ref;
 	}
-	
-	
 	
 }

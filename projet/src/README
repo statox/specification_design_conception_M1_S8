@@ -1,13 +1,43 @@
 Questions:
 
+Note:
+Invariant pour la classe Personne et ses fille: un nom et un prénom ne peuvent jamais etre null ou vide
+public boolean invariant()
+{
+	return !(this.nom.equals(null) || this.nom.isEmpty() || this.prenom.equals(null) || this.prenom.isEmpty());
+}
+
 1 Donnez en Java tous les attributs (avec leur visibilité et leur type) de la classe Equipage.
 
-private Boolean auMin;
-private Boolean auMax;
-private Vol vol;
-private Vector<Personne> membres;
+	private Boolean auMin;
+	private Boolean auMax;
+	private Vector<PNC> pnc;
+	private Pilote pilote;
+	private Copilote copilote;
+	private Vol vol;
 
-A voir si je garde cette forme là pour les membres d'équipage ou si je considère qu'il n'y a qu'un seul pilote et un
-seul copilote et donc ne garde qu'un vecteur de PNC et fait 2 attributs en plus.
 
+
+2 Écrivez la méthode de prototype boolean contains (Personne membre) de la classe Equipage
+qui vérifie si une personne appartient à l’équipage.
+
+public Boolean contains (Personne membre) {
+	return (pnc.contains(membre) || pilote==membre || copilote==membre );
+}
+
+3 Écrivez le corps de la méthode toString de la classe Equipage.
+
+public String toString() {
+	String base = vol.getAvion().getReference() + "\t" + vol.getNumero() + "\t" + vol.getDestination() + "\t" + vol.getDate() + " " + vol.getAvion().getType().getNom() + "\t" + vol.getSite() + "\t";
+
+	String s = base + pilote.getPrenom() + "\t" + pilote.getNom() + "\tpilote\t" + "\n"
+			+ base + copilote.getPrenom() + "\t" + copilote.getNom() + "\tcopilote\t" + "\n";
+	for (PNC p : pnc) {
+		s += base + p.getPrenom() + "\t" + p.getNom() + "\tPNC\t" + "\n";
+	}
+
+	return s;
+}
+
+4 done
 

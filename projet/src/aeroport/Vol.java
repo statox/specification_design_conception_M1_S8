@@ -63,12 +63,39 @@ public class Vol {
 	}
 
     public void addPilote(Pilote p) throws EquipageException {
-        //TODO: throw exception
-        
-
+    	equipage.addPilote(p);
     }
     
+    public void addCopilote(Copilote c) throws EquipageException {
+        equipage.addCopilote(c);
+    }
     
+    public void addPNC(PNC p) throws EquipageException {
+        equipage.addPNC(p);
+    }
+    
+    public void delMember (Personne p) throws EquipageException {
+    	equipage.delMember(p);
+    }
+    
+    public boolean equipageAuComplet() {
+    	if (equipage.getPilote() == null
+    			|| equipage.getCopilote() == null 
+    			|| equipage.getPnc().size() < avion.getType().getNbPNCmin())
+    		return false;
+    	
+    	return true;
+    }
 	
+    public boolean peutVoler() {
+    	if (!equipageAuComplet()) return false;
+    	if (numero == null) return false;
+    	if (site == null) return false;
+    	if (destination == null) return false;
+    	if (date == null) return false;
+    	if (avion == null) return false;
+    	
+    	return true;
+    }
 	
 }

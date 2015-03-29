@@ -1,9 +1,12 @@
 package aeroport;
 
+import java.util.Vector;
+
 public class TypeAvion {
 	private String nom;
 	private int nbPNCmin;
 	private int nbPNCmax;
+	private Vector<Personne> qualifies;
 	
 	/* getters setters */
 	public String getNom() {
@@ -35,9 +38,18 @@ public class TypeAvion {
 		this.nom = nom;
 		this.nbPNCmin = min;
 		this.nbPNCmax = max;
+		this.qualifies = new Vector<Personne>();
 	}
 	
+	public void addQualifie(Personne m) throws EquipageException, UnsupportedOperationException {
+		throw new UnsupportedOperationException("Not implemented");
+	}
 	
+	public void delQualifie(Personne m) throws EquipageException, UnsupportedOperationException {
+		throw new UnsupportedOperationException("Not implemented");
+	}
 	
-	
+	public void purgeQualifie(Personne m) throws EquipageException, UnsupportedOperationException {
+		throw new UnsupportedOperationException("Not implemented");
+	}
 }
