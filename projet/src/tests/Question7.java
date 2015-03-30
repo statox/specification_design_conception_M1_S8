@@ -1,5 +1,7 @@
 package tests;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.Vector;
 
 import org.junit.After;
@@ -24,7 +26,6 @@ public class Question7 {
     TypeAvion ta;
     Avion a;
     Vol v;
-    
     
     @Before
     public void setUp() throws Exception {
@@ -67,10 +68,21 @@ public class Question7 {
         e = null;
     }
     
+    /* verifie qu'on ne peut pas ajouter un pnc a un equipage plein */
     @Test (expected = EquipageException.class)
     public void affecterPNC_equipePleine() throws Exception {
+    	System.out.println("Equipage.equipageAuComplet => Vol.peutVoler");
     	e.setAuMax(true);
     	v.addPNC(new PNC("Herve", "Dumont"));
     }
-
+    
+    /* verifie que les qualifications sont bien allouées */
+    @Test
+    public void qualifications() {
+    	System.out.println("Personne.addQualification => TypeAvion contient les qualifies");
+    	assertTrue(p.getQualifications().contains(ta));
+    	assertTrue(ta.getQualifies().contains(p));
+    	assertTrue(cp.getQualifications().contains(ta));
+    	assertTrue(ta.getQualifies().contains(cp));
+    }
 }

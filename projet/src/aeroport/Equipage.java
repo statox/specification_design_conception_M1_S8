@@ -3,6 +3,7 @@ package aeroport;
 import java.util.Vector;
 
 public class Equipage {
+	
 	private Boolean auMin;
 	private Boolean auMax;
 	private Vector<PNC> pnc;
@@ -108,20 +109,21 @@ public class Equipage {
 		this.auMin = false;
 		this.auMax = false;
 	}
-	
-	
+		
 	/* question 2 */
 	public Boolean contains (Personne membre) {
 		if (membre == null) return false;
-		
-		return (pnc.contains(membre) || pilote.equals(membre) || copilote.equals(membre) );
+		if (pnc != null && pnc.contains(membre) ) return true;
+		if (pilote != null && pilote.equals(membre) ) return true;
+		if (copilote != null && copilote.equals(membre)) return true;
+		return false;
 	}
 
-			
-	
 	@Override
 	public String toString() {
-		String base = vol.getAvion().getReference() + " " + vol.getNumero() + " " + vol.getDestination() + " " + vol.getDate() + " " + vol.getAvion().getType().getNom() + " " + vol.getSite() + " ";
+		String base = vol.getAvion().getReference() + " " + vol.getNumero() + " " 
+                        + vol.getDestination() + " " + vol.getDate() + " " 
+                        + vol.getAvion().getType().getNom() + " " + vol.getSite() + " ";
 		
 		String s = "Equipage: " + base + "\n";
 		if (pilote != null) s += "pilote\t\t" + pilote + "\n";

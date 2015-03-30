@@ -6,5 +6,4 @@ public class PNC extends Personne {
 	public PNC(String nom, String prenom) throws InvariantBroken {
 		super(nom, prenom);
 	}
-
 }

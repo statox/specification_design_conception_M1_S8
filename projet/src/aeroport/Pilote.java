@@ -8,5 +8,4 @@ public class Pilote extends Personne {
 	public Pilote(String nom, String prenom) throws InvariantBroken {
 		super(nom, prenom);
 	}
-
 }

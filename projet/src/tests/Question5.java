@@ -28,7 +28,6 @@ public class Question5 {
     Avion a;
     Vol v;
     
-    
     @Before
     public void setUp() throws Exception {
         ta = new TypeAvion("A320", 2, 3);
@@ -53,9 +52,6 @@ public class Question5 {
         
         pncs[2] = new PNC("Ben", "Gamma");
         pncs[2].addQualification(ta);
-        
-        
-        
     }
     
     @After
@@ -122,7 +118,7 @@ public class Question5 {
     /* verifie le bon fonctionnement de la methode contains() */
     @Test
 	public void contains() throws Exception {
-    	System.out.println("vol - methode contains");
+    	System.out.println("equipage - methode contains");
         v.addPilote(p);
         v.addCopilote(cp);
         v.addPNC(pncs[0]);

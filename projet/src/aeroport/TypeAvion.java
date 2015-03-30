@@ -27,7 +27,12 @@ public class TypeAvion {
 	public void setNbPNCmax(int nbPNCmax) {
 		this.nbPNCmax = nbPNCmax;
 	}
-	
+	public Vector<Personne> getQualifies() {
+		return qualifies;
+	}
+	public void setQualifies(Vector<Personne> qualifies) {
+		this.qualifies = qualifies;
+	}
 	/* constructor(s) */
 	public TypeAvion(String nom) {
 		super();
@@ -39,6 +44,19 @@ public class TypeAvion {
 		this.nbPNCmin = min;
 		this.nbPNCmax = max;
 		this.qualifies = new Vector<Personne>();
+	}
+	
+	/* 
+	 * Invariant:
+	 * nbPNCmax >= nbPNCmin
+	 * returns 	false if the invariant is broken
+	 * 			true otherwise
+	 */
+	public boolean invariant() {
+		if (nbPNCmax <= 0 || nbPNCmin <= 0) return false;
+		if (nbPNCmax < nbPNCmin) return false;
+		
+		return true;
 	}
 	
 	public void addQualifie(Personne m) throws EquipageException {

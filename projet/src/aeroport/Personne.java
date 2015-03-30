@@ -22,7 +22,6 @@ public class Personne {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	
 	public Vector<TypeAvion> getQualifications() {
 		return qualifications;
 	}
@@ -71,7 +70,6 @@ public class Personne {
 		return false;
 	}
 	
-	
 	public boolean delQualification(TypeAvion type, boolean fromType) throws EquipageException {
 		//TODO: what is the fromType??
 		
@@ -80,14 +78,9 @@ public class Personne {
 		
 		return qualifications.remove(type);
 	}
-	@Override
+
+    @Override
 	public String toString() {
 		return nom + " " + prenom;
 	}
-	
-	
-	
-	
-	
-	
 }
