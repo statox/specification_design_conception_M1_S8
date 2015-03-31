@@ -48,9 +48,9 @@ public class TypeAvion {
 	
 	/* 
 	 * Invariant:
-	 * nbPNCmax >= nbPNCmin
-	 * returns 	false if the invariant is broken
-	 * 			true otherwise
+	 * 0 <= nbPNCmin <= nbPNCmax
+	 * retourne	false si linvariant est violé
+	 * 			true  sinon
 	 */
 	public boolean invariant() {
 		if (nbPNCmax <= 0 || nbPNCmin <= 0) return false;

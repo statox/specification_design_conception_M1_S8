@@ -79,7 +79,8 @@ public class Vol {
     }
     
     public boolean equipageAuComplet() {
-    	if (equipage.getPilote() == null
+    	if ( equipage == null
+                || equipage.getPilote() == null
     			|| equipage.getCopilote() == null 
     			|| equipage.getPnc().size() < avion.getType().getNbPNCmin())
     		return false;

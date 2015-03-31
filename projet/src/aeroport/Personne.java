@@ -43,9 +43,9 @@ public class Personne {
 	}
 	
 	/* invariant: 
-	 * In this class the name and firstname can not by empty or null
-	 * return 	true if the invariant is broken
-	 * 			false otherwise
+	 * Le nom et le prenom ne peuvent pas etre des chaines vides ou non initialisees
+     * retourne 	false si l'invariant est violé
+     *  			true  sinon
 	 */
 	public boolean invariant()
 	{
